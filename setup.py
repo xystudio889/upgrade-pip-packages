@@ -1,19 +1,20 @@
 from setuptools import setup, find_packages
 import sys
+from auto_upgrade_pip import __version__
 
 with open("README-PYPI.md",encoding="utf-8") as f:
     long_description = f.read()
 
 data_files = []
 if sys.platform == "win32":
-    data_files = [('Scripts', ['scripts/upgrade-pip-select.exe','scripts/upgrade-pip-auto.exe'])]
+    data_files = [('Scripts', ['scripts/upgrade-pip.exe'])]
 
 with open("README.md",encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
     name = "auto-upgrade-pip",
-    version = "0.1.0",
+    version = __version__,
     install_requires = ["toml","requests","geoip2"],
     python_requires = ">=3.6",
     author = "xystudio",
