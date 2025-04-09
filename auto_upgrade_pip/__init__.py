@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
 
-__version__ = "0.1.0.post0"
-__all__ = ["auto","select"]
+__version__ = "0.2.0"
+__all__ = ["auto", "customize", "manual"]
 
 def auto():
     path = Path("requirements.txt")
@@ -82,4 +82,9 @@ def select():
     print(f'|{t1s: <27}|\n|{30*"-"}|\n|{t2s: <26}|\n|{30*"-"}|\n|{t3s: <27}|\n|{"-"*30}|')
 
     os.system("pause")
+    os.remove(path)
+
+def customize(options:list[str]):
+    path = Path("requirements.txt")
+    os.system(f"python -m pip install --upgrade {' '.join(options)}")
     os.remove(path)
