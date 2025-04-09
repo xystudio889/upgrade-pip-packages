@@ -7,7 +7,7 @@ with open("README-PYPI.md",encoding="utf-8") as f:
 
 data_files = []
 if sys.platform == "win32":
-    data_files = [('Scripts', ['scripts/upgrade-pip.exe'])]
+    data_files = [('Scripts', ['scripts/pip-upgrade.exe'])]
 
 setup(
     name = "auto-upgrade-pip",
