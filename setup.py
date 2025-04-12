@@ -11,6 +11,7 @@ if sys.platform == "win32":
 
 setup(
     name = "auto-upgrade-pip",
+    packages=find_packages(),
     version = __version__,
     install_requires = [],
     python_requires = ">=3.6",
